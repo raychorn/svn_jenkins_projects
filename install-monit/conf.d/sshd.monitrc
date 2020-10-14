@@ -1,0 +1,8 @@
+check process sshd with pidfile /var/run/sshd.pid
+   start program = "/etc/init.d/ssh start"
+   stop program = "/etc/init.d/ssh stop"
+   if failed host 127.0.0.1 port 2222 protocol ssh then alert
+   if 5 restarts within 5 cycles then restart
+   if 10 restarts within 10 cycles then timeout
+   group server
+

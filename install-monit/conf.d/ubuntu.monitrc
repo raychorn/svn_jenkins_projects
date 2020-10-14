@@ -1,0 +1,9 @@
+check system vyperlogix-ubuntu-12.04
+  if loadavg(1min) > 90 for 8 times within 10 cycles then alert
+  if loadavg(5min) > 80 for 8 times within 10 cycles then alert
+  if memory usage > 80% for 8 times within 10 cycles then alert
+  if cpu usage (user) > 95% for 8 times within 10 cycles then alert
+  if cpu usage (system) > 80% for 8 times within 10 cycles then alert
+  if cpu usage (wait) > 95% for 16 times within 20 cycles then alert
+  group system
+

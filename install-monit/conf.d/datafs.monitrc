@@ -1,0 +1,20 @@
+check device root.disk with path /dev/xvda1
+  if space usage > 95% for 15 times within 20 cycles then alert
+  if inode usage > 95% for 15 times within 20 cycles then alert
+  group server
+
+check device varrun with path /var/run
+  if space usage > 95% for 15 times within 20 cycles then alert
+  if inode usage > 95% for 15 times within 20 cycles then alert
+  group server
+
+check device varlock with path /var/lock
+  if space usage > 95% for 15 times within 20 cycles then alert
+  if inode usage > 95% for 15 times within 20 cycles then alert
+  group server
+
+check device udev with path /dev
+  if space usage > 95% for 15 times within 20 cycles then alert
+  if inode usage > 95% for 15 times within 20 cycles then alert
+  group server
+

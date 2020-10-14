@@ -1,0 +1,10 @@
+{
+	"CPU Load": "check_load -w 15,10,5 -c 30,25,20",
+	"Current Users": "check_users -w 20 -c 50",
+	"PING": "check_ping -H {{host}} -w 100.0,60% -c 200.0,90%",
+	"SSH": "check_ssh -p 22 {{host}}",
+	"PARTITIONS":"awk '{print $4}' /proc/partitions | sed -e '/name/d' -e '/^$/d' -e '/[1-9]/!d'",
+	"DISKS": "check_disk -w 50 -c 10 --partition={{partition}}",
+	"Total Processes": "check_procs",
+	"Zombie Processes": "check_procs -w 5 -c 10 -s Z"
+}
